@@ -1,121 +1,290 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+// export default function postList({ posts, isLoggedIn, handleLike}) {
+//     return (
+//         <div>
+//             <Header isLoggedIn={isLoggedIn} />
+
+//             {posts.map(post => (
+//                 <Post
+//                     key={post.id}
+//                     post={post}
+//                     isLoggedIn={isLoggedIn}
+//                     onLike={handleLike}
+//                 />
+//             ))}
+//         </div>
+//     );
+// }
+
+// function App() {
+//   return (
+//   <div>
+//     <h1>Hello World</h1>
+//     <p>리액트 처음이시죠?</p>
+//   </div>
+//   );
+// }
+
+// export default App;
+
+
+// function App() {
+//   const name = "React";
+//   return (
+//     <div>
+//       <h1>Hello, {name}!</h1>
+//       <p>Welcome to learning React.</p>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+// import MyComponent from "./MyComponent";
+
+// function App() {
+//   const school = "서경대학교";
+//   const club = "멋쟁이사자처럼";
+//   return (
+//     <div>
+//       <h1>부모 컴포넌트</h1>
+//       <MyComponent name = {school} age = {club} />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+// import Profile from "./Profile";
+// 
+// function App() {
+//   return (
+//     <>
+//       <Profile
+//         name = "남궁강"
+//         gender = "남성"
+//         department = "전자컴퓨터공학과"
+//         viewCount = {1000}
+//       />
+//     </>
+//   );
+// }
+// 
+// export default App;
+
+
+// import Button from "./Button";
+// 
+// function App() {
+//   return (
+//     <div>
+//       <Button text = "로그인" />
+//       <Button text = "다음" />
+//     </div>
+//   );
+// }
+// 
+// export default App;
+
+
+// import styled from "styled-components";
+// 
+// const Button = styled.button`
+//   width: 450px;
+//   padding: 16px;
+//   background-color: #C6E400;
+//   border: 1px solid blank;
+//   font-size: 18px;
+//   font-weight: bold;
+//   border-radius: 0px;
+//   cursor: pointer;
+// `;
+// 
+// function App() {
+//   return (
+//     <Button>로그인</Button>
+//   );
+// }
+// 
+// export default App;
+
+
+// import styled from "styled-components";
+// 
+// const Button = styled.button`
+//   width: 450px;
+//   padding: 16px;
+//   background-color: ${(props) => (props.background)};
+//   border: 1px solid black;
+//   font-size: 18px;
+//   font-weight: bold;
+//   border-radius: 0px;
+//   cursor: pointer;
+// `;
+// 
+// const ButtonDiv = styled.div`
+//   display: flex;
+//   gap: 10px;
+//   align-items: center;
+//   justify-content: center;
+//   width: 100vw;
+//   height: 100vh;
+// `;
+// 
+// function App() {
+//   return (
+//     <ButtonDiv>
+//       <Button background = "#C6E400">로그인</Button>
+//       <Button background = "#FF6B6B">로그아웃</Button>
+//     </ButtonDiv>
+//   );
+// }
+// 
+// export default App;
+
+
+// import styled from "styled-components";
+
+// const Container = styled.div`
+//   display: flex;
+//   gap: 10px;
+//   align-items: center;
+//   justify-content: center;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: #f8f8f8;
+// `;
+
+// const Card = styled.div`
+//   background: ${(props) => props.background || "white"};
+//   color: ${(props) => props.textColor || "black"};
+//   padding: 20px;
+//   border-radius: 10px;
+//   width: 450px;
+//   text-align: center;
+// `;
+
+// const Button = styled.button`
+//   width: 120px;
+//   height: 45px;
+//   background-color: ${(props) => props.background || "gray"};
+//   color: ${(props) => props.color || "white"};
+//   padding: 10px;
+//   border-radius: 5px;
+//   border: none;
+//   font-size: 14px;
+//   cursor: pointer;
+//   margin-top: 10px;
+// `;
+
+// function App() {
+//   return (
+//     <Container>
+//       {/* 강조 스타일 카드 */}
+//       <Card background="lightgreen" textColor="white">
+//         <h2>강조 카드</h2>
+//         <p>강조 스타일이 적용된 카드입니다.</p>
+//         <Button background="green" color="blue">강조 버튼</Button>
+//       </Card>
+
+//       {/* 기본 카드 */}
+//       <Card>
+//         <h2>기본 카드</h2>
+//         <p>기본 스타일이 적용된 카드입니다.</p>
+//         <Button>기본 버튼</Button>
+//       </Card>
+//     </Container>
+//   );
+// }
+
+// export default App;
+
+
+// import { useState } from "react";
+
+// function App() {
+//   const [time, setTime] = useState(1); // 1 -> 0이면 0시부터 시작
+
+//   function handleClick() {
+//     setTime(time + 1);
+//   }
+
+//   return (
+//     <>
+//       <span>현재 시간: {time}시</span>
+//       <button onClick = {handleClick}>시간 증가</button>
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+// import { useState } from "react";
+
+// function App() {
+//   const [text, setText] = useState("");
+
+//   function handleChange(e) {
+//     setText(e.target.value);
+//   }
+
+//   function handleClick() {
+//     alert(text);
+//   }
+
+//   return (
+//     <div>
+//       <input type = "text" onChange={handleChange} />
+//       <button onClick={handleClick}>확인</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+import { useState } from "react";
+import styled from "styled-components";
+import MemoInsert from "./MemoInsert";
+import MemoList from "./MemoList";
+
+const Container = styled.div`
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f5f0e6;
+  border-radius: 10px;
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  color: #333;
+`;
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [memos, setMemos] = useState([]);
+
+  const handleInsert = (text) => {
+    setMemos([...memos, text]);
+  };
+
+  const handleRemove = (index) => {
+    setMemos(memos.filter((_, i) => i !== index));
+  };
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <Container>
+      <h2>MemoList</h2><br />
 
-      <div className="ticks"></div>
+      <MemoInsert onInsert={handleInsert} /> 
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <MemoList
+        memos={memos}
+        onRemove={handleRemove} />
+    </Container>
+  );
 }
 
-export default App
+export default App;
